@@ -1,5 +1,6 @@
 
-<h1>Roll the dice</h1>
+<% if @name %>
+<h1>Roll the dice, <%= @name %></h1>
 <p>
   <img src="/images/dice/<%= @die1 %>.svg">
   <img src="/images/dice/<%= @die2 %>.svg">
@@ -8,5 +9,16 @@
   The total is <%= @total %>
 </p>
 <p>
-  <a href="/dice">Roll Again</a>
+  <a href="/dice?name=<%= @name %>">Roll Again</a>
 </p>
+<% else %> 
+  <h1> What is your name? </h1>
+  <form action="/dice" method = "GET">
+    <input name="name" type="text">
+    <button>Let's play!</button>
+  </form>
+<% end %>
+
+
+
+
