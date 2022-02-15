@@ -1,0 +1,21 @@
+<%= form_with model: @contact do |form| %>
+  <p>
+    <%= form.label "First Name" %>
+    <%= form.text_field "first_name" %>
+  </p>
+  <p>
+    <%= form.label "Last Name" %>
+    <%= form.text_field "last_name" %>
+  </p>
+  <p>
+    <%= form.label "Email" %>
+    <%= form.text_field "email" %>
+  </p>
+   <p>
+    <%= form.label "Phone Number" %>
+    <%= form.text_field "phone_number" %>
+  </p>
+    <%= form.hidden_field "company_id" %>
+
+  <%= form.submit %>
+<% end %>
